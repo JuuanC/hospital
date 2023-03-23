@@ -15,9 +15,9 @@ public class CitaController {
     @Autowired
     CitaService service;
 
-    @GetMapping("list")
-    public String getList(){
-        return "asdasdasdasd";
+    @GetMapping()
+    public List<Cita> getList(){
+        return service.getAll();
     }
 
     @GetMapping
