@@ -1,0 +1,12 @@
+2023-03-22 19:06:02 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DOCTOR" not found (this database is empty); SQL statement:
+select * from doctor [42104-214]
+2023-03-22 19:07:10 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DOCTOR" not found (this database is empty); SQL statement:
+select * from doctor [42104-214]
+2023-03-22 19:07:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DOCTOR" not found (this database is empty); SQL statement:
+select * from doctor [42104-214]
+2023-03-22 19:07:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DOCTOR" not found (this database is empty); SQL statement:
+select * from doctor [42104-214]
