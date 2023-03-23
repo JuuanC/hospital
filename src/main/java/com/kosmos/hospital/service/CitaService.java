@@ -75,7 +75,7 @@ public class CitaService {
 
     public List<Cita> getByFechaConsultorioDoctor(Date fecha, Long idConsultorio, Long idDoctor) {
         try {
-            return repository.findByIdDoctorAndIdConsultorioAndIdDoctor(fecha, idConsultorio, idDoctor);
+            return repository.findByFechaAndIdConsultorioAndIdDoctor(fecha, idConsultorio, idDoctor);
         } catch (Exception e) {
             throw new CustomException(e.getMessage(), HttpStatus.BAD_REQUEST);
         }

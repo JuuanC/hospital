@@ -22,17 +22,26 @@ public class CitaController {
     @Autowired
     CitaService service;
 
-    @GetMapping()
+    /*@GetMapping()
     public List<Cita> getList(){
         return service.getAll();
-    }
+    }*/
 
     @GetMapping
-    public List<Cita> getByFecha(@RequestParam("fecha") Date fecha){
-        return service.getByFecha(fecha);
+    public List<Cita> getByFecha(@RequestParam(value = "fecha", required = false) Date fecha,
+                                 @RequestParam(value = "idConsultorio", required = false) Long idConsultorio,
+                                 @RequestParam(value = "idDoctor", required = false) Long idDoctor){
+        if(fecha == null && idConsultorio == 0 && idDoctor == 0)
+            return service.getAll();
+        if(fecha != null && idConsultorio == 0 && idDoctor == 0)
+            return service.getByFecha(fecha);
+        if(fecha == null && idConsultorio != 0 && idDoctor == 0)
+            return service.getByConsultorio(idConsultorio);
+        //if(fecha == null && idConsultorio == 0 && idDoctor != 0)
+            return service.getByIdDoctor(idDoctor);
     }
 
-    @GetMapping
+    /*@GetMapping
     public List<Cita> getByConsultorio(@RequestParam("idConsultorio") Long idConsultorio){
         return service.getByConsultorio(idConsultorio);
     }
@@ -83,6 +92,6 @@ public class CitaController {
             errors.put(fieldName, errorMessage);
         });
         return errors;
-    }
+    }*/
 
 }

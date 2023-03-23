@@ -17,6 +17,6 @@ public interface CitaRepository extends CrudRepository<Cita, Long> {
     List<Cita> findByFechaAndIdConsultorio(Date fecha, Long idConsultorio);
     List<Cita> findByFechaAndIdDoctor(Date fecha, Long idDoctor);
     List<Cita> findByIdDoctorAndIdConsultorio(Long idDoctor, Long idConsultorio);
-    List<Cita> findByIdDoctorAndIdConsultorioAndIdDoctor(Date fecha, Long idConsultorio, Long idDoctor);
+    List<Cita> findByFechaAndIdConsultorioAndIdDoctor(Date fecha, Long idConsultorio, Long idDoctor);
 }
 
