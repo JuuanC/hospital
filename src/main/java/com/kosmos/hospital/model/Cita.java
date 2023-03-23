@@ -1,4 +1,4 @@
-package model;
+package com.kosmos.hospital.model;
 
 import lombok.Data;
 

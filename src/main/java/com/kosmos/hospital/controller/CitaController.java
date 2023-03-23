@@ -1,12 +1,13 @@
-package controller;
+package com.kosmos.hospital.controller;
 
-import model.Cita;
+import com.kosmos.hospital.model.Cita;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
-import service.CitaService;
+import com.kosmos.hospital.service.CitaService;
+
 
 import javax.validation.Valid;
 import java.sql.Date;

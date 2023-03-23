@@ -1,11 +1,11 @@
-package service;
+package com.kosmos.hospital.service;
 
-import exception.CustomException;
-import model.Cita;
+import com.kosmos.hospital.exception.CustomException;
+import com.kosmos.hospital.model.Cita;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import repository.CitaRepository;
+import com.kosmos.hospital.repository.CitaRepository;
 
 import java.sql.Date;
 import java.util.List;

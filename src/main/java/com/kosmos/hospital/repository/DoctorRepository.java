@@ -1,6 +1,6 @@
-package repository;
+package com.kosmos.hospital.repository;
 
-import model.Doctor;
+import com.kosmos.hospital.model.Doctor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package exception;
+package com.kosmos.hospital.exception;
 
 import org.springframework.http.HttpStatus;
 

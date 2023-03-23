@@ -1,12 +1,11 @@
-package repository;
+package com.kosmos.hospital.repository;
 
-import model.Cita;
+import com.kosmos.hospital.model.Cita;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface CitaRepository extends CrudRepository<Cita, Long> {
