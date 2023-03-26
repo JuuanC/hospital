@@ -1,0 +1,42 @@
+@RestController
+@RequestMapping("/productos")
+public class ProductoController {
+
+    @Autowired
+    private ProductoRepository productoRepository;
+
+    @GetMapping
+    public ResponseEntity<List<Producto>> buscarProductos(
+            @RequestParam("nombre") String nombre,
+            @RequestParam(value = "categoria", required = false) String categoria,
+            @RequestParam(value = "precioMin", required = false) Double precioMin,
+            @RequestParam(value = "precioMax", required = false) Double precioMax) {
+
+        List<Producto> productos = null;
+
+        // Se toma la decisión de cómo buscar la información según los parámetros proporcionados
+        if (categoria != null && precioMin != null && precioMax != null) {
+            productos = productoRepository.findByNombreContainsAndCategoriaAndPrecioBetween(
+                    nombre, categoria, precioMin, precioMax);
+        } else if (categoria != null && precioMin != null) {
+            productos = productoRepository.findByNombreContainsAndCategoriaAndPrecioGreaterThanEqual(
+                    nombre, categoria, precioMin);
+        } else if (categoria != null && precioMax != null) {
+            productos = productoRepository.findByNombreContainsAndCategoriaAndPrecioLessThanEqual(
+                    nombre, categoria, precioMax);
+        } else if (precioMin != null && precioMax != null) {
+            productos = productoRepository.findByNombreContainsAndPrecioBetween(
+                    nombre, precioMin, precioMax);
+        } else if (precioMin != null) {
+            productos = productoRepository.findByNombreContainsAndPrecioGreaterThanEqual(
+                    nombre, precioMin);
+        } else if (precioMax != null) {
+            productos = productoRepository.findByNombreContainsAndPrecioLessThanEqual(
+                    nombre, precioMax);
+        } else {
+            productos = productoRepository.findByNombreContains(nombre);
+        }
+
+        return ResponseEntity.ok(productos);
+    }
+}
